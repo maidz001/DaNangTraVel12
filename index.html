@@ -395,7 +395,8 @@
       </div>
     </section>
     <script>
-  if(sessionStorage.getItem("trangthai")==="an"){
+      
+  if(sessionStorage.getItem("trangthai")==="an"||sessionStorage.getItem("trangthai")==null){
       document.getElementById("dangxuat").style.display="none";
       document.getElementById("dangky").style.display="";
       document.getElementById("dangnhap").style.display="";
