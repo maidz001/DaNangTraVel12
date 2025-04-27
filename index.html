@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discovery Đà Nẵng</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Header */
+      .tieude {
+        display: flex;
+        align-items: center;
+        padding: 10px 50px;
+        background-color: #89e2f8;
+      }
+
+      .logo {
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+      }
+      #acuoi {
+        margin-right: 100px;
+      }
+
+      .dieuhuong a {
+        margin-left: 20px;
+        padding-left: 50px;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+      }
+
+      .ngonngu {
+        display: flex;
+        align-items: center;
+      }
+
+      #dangnhap,
+      #dangky,#dangxuat {
+        padding-top: 2px;
+        padding-left: 20px;
+        background-color: #fff;
+        margin-right: 20px;
+        margin-left: 20px;
+        width: 120px;
+        height: 30px;
+        border-radius: 20px;
+      }
+      #dangxuat{
+        margin-left: 140px;
+      }
+      .ngonngu input {
+        border: none;
+        background-color: #fff;
+        margin-right: 20px;
+        width: 190px;
+        height: 30px;
+        border-radius: 20px;
+      }
+
+      .ngonngu a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        margin-right: 15px;
+      }
+
+      .ngonngu select {
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+        background: transparent;
+        font-size: 16px;
+      }
+
+      /* Hero Section */
+      .anhnen {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+
+      .anhnen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .chunen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 64px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Itinerary Section */
+      .lichsu {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 50px;
+        margin-left: 20px;
+        background-color: white;
+      }
+
+      .lichsu_trai,
+      .lichsu_phai {
+        width: 60%;
+      }
+
+      .lichsu_trai {
+        margin-top: -35px;
+        margin-left: -25px;
+      }
+
+      .lichsu_trai h2 {
+        background-color: #89e2f8;
+        width: 120%;
+        height: 13%;
+        margin-left: 80px;
+        color: white;
+        padding: 10px;
+        padding-bottom: 40px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .lichsu_trai ul {
+        list-style: none;
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      .lichsu_trai ul li {
+        width: 115%;
+        font-size: 16px;
+      }
+
+      .lichsu_phai img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .lichsu_phai p {
+        font-size: 16px;
+        margin-top: 20px;
+        line-height: 1.8;
+      }
+
+      /* Gallery Section */
+      .thuvien {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 40px 50px;
+        background-color: #fff;
+      }
+
+      .mucthuvien {
+        width: 48%;
+        margin-bottom: 40px;
+      }
+
+      .tieudemuc {
+        background-color: #89e2f8; /* Nền màu xanh dương cho thẻ div bọc tiêu đề */
+        padding: 10px;
+        margin-left: 7vw;
+        width: 70%;
+        margin-bottom: 10px;
+      }
+
+      .tieudemuc h3 {
+        font-size: 18px;
+        color: white; /* Tiêu đề màu trắng để nổi bật trên nền xanh */
+      }
+
+      .mucthuvien img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .mucthuvien p {
+        font-size: 16px;
+        margin-top: 15px;
+        line-height: 1.8;
+        color: #333; /* Văn bản màu đen */
+      }
+
+      /* Contact Section */
+      .lienhe {
+        background: linear-gradient(to right, #c8f3fe, rgb(87, 160, 202));
+        background-color: #89e2f8;
+    
+        padding: 40px;
+      }
+
+      .lienhe h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .lienhe p {
+        font-size: 16px;
+        margin: 10px 0;
+      }
+
+      .lienhe img {
+        height: 40px;
+        margin-top: 20px;
+      }
+      .muc {
+        height: 100%;
+        width: 160%;
+        border-bottom: solid 1px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+      .muc:hover {
+        background-color: rgb(114, 180, 219);
+      }
+      #khoangxanh{
+        width: 100vw;
+        height: 5vw;
+        background-color: rgb(114, 180, 219);
+        margin-bottom: 30px;
+      }
+      #div_lienhe{
+        padding-left: 20vw;
+        display: flex;
+      }
+      #div_img{
+        margin-top:0px;
+        margin-right: 100px;
+      }
+      #div_img img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+
+      #div_lh li,h2{
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="tieude">
+      <div>
+        <img class="logo" src="danang.jpg.png" alt="Logo" />
+      </div>
+      <nav class="dieuhuong">
+        <a href="#">Trang chủ</a>
+        <a href="#">Ẩm thực</a>
+        <a href="#">Điểm đến</a>
+        <a href="#">Dịch vụ</a>
+        <a id="acuoi" href="#">Đặt phòng</a>
+      </nav>
+      <div class="ngonngu">
+        <input type="text" placeholder="Tim kiem" />
+        <div id="dangky"><a href="./dangky.html">Đăng ký</a></div>
+        <div id="dangnhap"><a href="./dangnhap.html">Đăng nhập</a></div>
+        <div id="dangxuat"><a onclick="m2()">Đăng xuất</a></div>
+      </div>
+    </header>
+
+    <section class="anhnen">
+      <img src="danang.jpg.png" alt="Đà Nẵng" />
+      <div class="chunen">DISCOVER ĐÀ NẴNG</div>
+    </section>
+
+    <section class="thuvien">
+      <div class="mucthuvien">
+        <section class="lichsu">
+          <div class="lichsu_trai">
+            <h2>MỤC LỤC</h2>
+            <ul>
+              <li>
+                <a onclick="m1('muc1','muc11')"
+                  ><div id="muc11" class="muc">Điểm đến nổi bật</div></a
+                >
+              </li>
+              <li>
+                <a onclick="m1('muc2','muc22')"
+                  ><div id="muc22" class="muc">Ảm thực phong phú</div></a
+                >
+              </li>
+              <li>
+                <a onclick="m1('muc3','muc33')"
+                  ><div id="muc33" class="muc">Công trình kiến trúc độc đáo</div></a
+                >
+              </li>
+              <li>
+                <a onclick="m1('muc4','muc44')"
+                  ><div id="muc44" class="muc">Văn hóa đặc sắc</div></a
+                >
+              </li>
+              <li>
+                <a onclick="m1('muc5','muc55')"
+                  ><div id="muc55" class="muc">con người thân thiện</div></a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div id="muc1" class="mucthuvien">
+        <div class="tieudemuc">
+          <h3>1. Ẩm thực phố cổ</h3>
+        </div>
+        <img src="danang.jpg.png" alt="Ẩm thực" />
+        <p>
+          Ẩm thực Đà Nẵng luôn nổi bật với những món ăn đậm chất miền Trung, vừa
+          dân dã lại vừa tinh tế như bún chả cá hay mì Quảng.
+        </p>
+      </div>
+      <div id="muc2" class="mucthuvien">
+        <div class="tieudemuc">
+          <h3>2. Ẩm thực phố cổ</h3>
+        </div>
+        <img src="danang.jpg.png" alt="Ẩm thực" />
+        <p>
+          Ẩm thực Đà Nẵng luôn nổi bật với những món ăn đậm chất miền Trung, vừa
+          dân dã lại vừa tinh tế như bún chả cá hay mì Quảng.
+        </p>
+      </div>
+      <div id="muc3" class="mucthuvien">
+        <div class="tieudemuc">
+          <h3>3. Cầu Rồng phun lửa</h3>
+        </div>
+        <img src="danang.jpg.png" alt="Cầu Rồng" />
+        <p>
+          Cầu Rồng không chỉ là biểu tượng của Đà Nẵng mà còn là nơi diễn ra màn
+          phun lửa và nước độc đáo, thu hút hàng ngàn du khách.
+        </p>
+      </div>
+      <div id="muc4" class="mucthuvien">
+        <div class="tieudemuc">
+          <h3>4. Ngũ Hành Sơn</h3>
+        </div>
+        <img src="danang.jpg.png" alt="Ngũ Hành Sơn" />
+        <p>
+          Ngũ Hành Sơn là điểm đến tâm linh nổi tiếng với những ngôi chùa cổ
+          kính, hang động kỳ bí và cảnh quan thiên nhiên hùng vĩ.
+        </p>
+      </div>
+      <div id="muc5" class="mucthuvien">
+        <div class="tieudemuc">
+          <h3>5. Lặn ngắm sinh vật</h3>
+        </div>
+        <img src="danang.jpg.png" alt="Lặn ngắm san hô" />
+        <p>
+          Du khách đến Đà Nẵng không thể bỏ qua hoạt động lặn ngắm san hô tại
+          Sơn Trà, nơi có hệ sinh thái biển phong phú và rực rỡ.
+        </p>
+      </div>
+    </section>
+    <div id="khoangxanh"></div>
+    <!-- Contact Section -->
+    <section class="lienhe">
+      <div id="div_lienhe">
+        <div id="div_img"><img src="danang.jpg.png" alt="Logo Footer" />
+        <p style="color: #333;">DaNangTravel12</p>
+        </div>
+        <div id="div_lh"><h2>LIÊN HỆ</h2>
+          <ul>
+            <li>Địa chỉ: Số 128, đường Nguyễn Trãi, Đà Nẵng</li>
+            <li>Hotline: 0935.123.456</li>
+            <li>SDT: 0973.123.456</li>
+            <li>Email: info@danangtravel12.com</li>
+            <li>Website: https://danangtravel12/</li>
+          
+          </ul>
+          </div>
+        
+      </div>
+    </section>
+    <script>
+  if(sessionStorage.getItem("trangthai")==="an"){
+      document.getElementById("dangxuat").style.display="none";
+      document.getElementById("dangky").style.display="";
+      document.getElementById("dangnhap").style.display="";
+  }
+  else{
+    document.getElementById("dangxuat").style.display="";
+    document.getElementById("dangnhap").style.display="none";
+    document.getElementById("dangky").style.display="none";
+  }
+
+
+  function m2(){
+    sessionStorage.setItem("trangthai","an");
+    window.location.href="index.html";
+  }
+
+//  ----------------------------------------
+      document.getElementById("muc1").style.display = "none";
+      document.getElementById("muc5").style.display = "none";
+      document.getElementById("muc2").style.display = "none";
+      document.getElementById("muc3").style.display = "none";
+      document.getElementById("muc4").style.display = "none";
+      function m1(iddiv,idmuc) {
+
+        if (document.getElementById(iddiv).style.display == "none") {
+          document.getElementById(iddiv).style.display = "";
+          document.getElementById(idmuc).style.backgroundColor="rgb(114, 180, 219)";
+        } else {
+          document.getElementById(iddiv).style.display = "none";
+          document.getElementById(idmuc).style.backgroundColor="";
+        }
+        console.log("rdfgvhbjnm");
+      }
+    </script>
+  </body>
+</html>
